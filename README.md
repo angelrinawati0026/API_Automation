@@ -28,7 +28,8 @@ npm run test:mocha
 - Open report that has name pass_[date]-mochawesome-report.html
 
 ## Report using Mochawesome
-![alt text](image.png)
+![alt text](Capture.PNG) 
+
 
 
 
