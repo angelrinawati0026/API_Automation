@@ -29,11 +29,3 @@ npm run test:mocha
 
 ## Report using Mochawesome
 ![alt text](Capture.PNG) 
-
-
-
-
-## How to Run
-npm run test:mocha
-
-
