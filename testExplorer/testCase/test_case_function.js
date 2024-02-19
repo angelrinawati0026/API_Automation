@@ -1,4 +1,4 @@
-const { postMethod  ,putMethod,getMethod,patchMethod } = require("../apiServer/apiObjects");
+const { postMethod, putMethod, getMethod, patchMethod, deleteMethod } = require("../apiServer/apiObjects");
 
 //test suites
 describe("Testing API restful", function () {
@@ -16,7 +16,8 @@ describe("Testing API restful", function () {
   it("Test PATCH from Function", async function () {
     await patchMethod(id);
    });
-   it("Test GET from Function", async function () {
-    await getMethod(id);
-  });
+   it("Test DELETE from Function", async function () {
+    await deleteMethod(id);
+   });
+  
 });
