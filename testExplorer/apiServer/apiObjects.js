@@ -69,12 +69,13 @@ async function patchMethod(id) {
   expect(response.body.name).to.equal("Computer AXF");
 
 }
-async function getMethod(id) {
-  const response = await request(url).get(`/objects/${id}`);
+async function deleteMethod(id) {
+  const response = await request(url)
+  .delete(`/objects/${id}`);
   //assertation / verifikasi
-  expect(response.status).to.equal(200);
-  console.log(response.body);
+  expect(response.body.message).to.equal(`object with id = ${id} has been deleted` );
+  
+  expect(response.body.error).to.equal(`object with id = ${id} wasn't not found.`);
 }
 
-
-module.exports = {postMethod,putMethod,getMethod,patchMethod};
+module.exports = {postMethod, putMethod, getMethod, patchMethod, deleteMethod};
