@@ -16,8 +16,8 @@ Before running the tests, ensure you have the following installed:
 npm install
 
 ##### Install supertest, mocha and chai
-npm install supertest --save-dev
-npm install mocha --save-dev
+npm install supertest --save-dev <br>
+npm install mocha --save-dev<br>
 npm i chai@4.3.10 --save-dev
 
 ## HOW to Run
