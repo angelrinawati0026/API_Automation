@@ -4,12 +4,6 @@ const baseUrl = require("../globalVariabel/baseUrl");
 
 const url = baseUrl; //define global variable
 
-async function getMethod() {
-  const response = await request(url).get("/objects/12");
-  //assertation / verifikasi
-  expect(response.status).to.equal(200);
-  console.log(response.body);
-}
 
 async function postMethod() {
   const response = await request(url)
@@ -56,7 +50,31 @@ async function putMethod(id) {
     expect(response.body.data.Color).to.equal("red");
   
   }
-
+  async function getMethod(id) {
+    const response = await request(url).get(`/objects/${id}`);
+    //assertation / verifikasi
+    expect(response.status).to.equal(200);
+    console.log(response.body);
+  }
   
+  //update partially
+async function patchMethod(id) {
+  const response = await request(url)
+    .patch(`/objects/${id}`)
+    .send({
+      name: "Computer AXF"
+    });
+  //assertation / verifikasi
+  expect(response.status).to.equal(200);
+  expect(response.body.name).to.equal("Computer AXF");
 
-module.exports = { getMethod, postMethod ,putMethod};
+}
+async function getMethod(id) {
+  const response = await request(url).get(`/objects/${id}`);
+  //assertation / verifikasi
+  expect(response.status).to.equal(200);
+  console.log(response.body);
+}
+
+
+module.exports = {postMethod,putMethod,getMethod,patchMethod};
